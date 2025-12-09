@@ -1,0 +1,22 @@
+.user {
+    background-color: rgb(27 61 100);
+    display: flex;
+    padding: 3rem;
+    width: 30rem;
+    justify-content: center;
+    border-radius: 2rem;
+    margin-left: 5%;
+}
+
+.user_name {
+    color: white;
+    font-size: 3rem;
+    background-color: transparent;
+}
+
+.user:hover {
+    cursor: pointer;
+    .user_name {
+        color: darkgray;
+    }
+}

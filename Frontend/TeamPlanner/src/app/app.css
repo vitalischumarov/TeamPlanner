@@ -1,0 +1,9 @@
+.content-area {
+    display: flex;
+}
+
+.user_area {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
