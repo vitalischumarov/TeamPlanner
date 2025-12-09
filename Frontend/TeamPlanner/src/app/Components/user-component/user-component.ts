@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-user-component',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './user-component.css',
 })
 export class UserComponent {
-
+  userName = input.required<string>();
 }

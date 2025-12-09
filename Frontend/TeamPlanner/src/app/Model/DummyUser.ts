@@ -1,7 +1,4 @@
-import { UserModel } from "./UserModel"
-
-export class DummyUser {
-    dummyUser: UserModel[] = [
+export const DummyUser = [
         {
             id : 1,
             name : "Anastasia"
@@ -18,5 +15,4 @@ export class DummyUser {
             id : 4,
             name : "Vitali"
         }
-    ]
-}
+]

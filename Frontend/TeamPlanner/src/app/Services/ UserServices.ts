@@ -5,8 +5,6 @@ import { DummyUser } from "../Model/DummyUser";
 export class UserServices {
     
     getAllUser(){
-        console.log('hier sind die dummy user')
-        console.log(DummyUser);
         return DummyUser;
     }
 }

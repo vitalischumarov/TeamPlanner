@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from './Components/header-component/header-component';
 import { UserComponent } from './Components/user-component/user-component';
 import { UserServices } from './Services/ UserServices';
@@ -14,9 +14,5 @@ export class App {
 
   get Users(){
     return this.userServie.getAllUser();
-  }
-  
-  printUser(){
-    console.log(this.Users);
   }
 }
