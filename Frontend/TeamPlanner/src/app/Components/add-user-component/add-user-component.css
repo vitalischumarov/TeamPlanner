@@ -1,0 +1,29 @@
+.newUser {
+    background-color: rgb(27 61 100);
+    display: flex;
+    padding: 3rem;
+    width: 30rem;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+.inputField {
+    border: none;
+    background-color: lightgray;
+    height: 3rem;
+    width: 20rem;
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    border-radius: 2rem;
+}
+
+.btn {
+    border: none;
+    background-color: green;
+    color: white;
+    width: 2rem;
+    margin-left: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: 4rem;
+}
