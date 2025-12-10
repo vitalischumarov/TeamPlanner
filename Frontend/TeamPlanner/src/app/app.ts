@@ -15,4 +15,8 @@ export class App {
   get Users(){
     return this.userServie.getAllUser();
   }
+
+  addNewUser(){
+    console.log('added')
+  }
 }

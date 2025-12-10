@@ -4,6 +4,7 @@
     @for (user of Users; track user.id) {
         <app-user-component userName="{{user.name}}"></app-user-component>
     }
+    <span class="addUserBtn" (click)="addNewUser()">+</span>
     </div>
     <div class="task_area">
     </div>
