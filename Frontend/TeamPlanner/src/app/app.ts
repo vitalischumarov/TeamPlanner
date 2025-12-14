@@ -35,6 +35,7 @@ export class App {
 
   selectedUserId: number = 0;
   loadUserTasks(id : number){
+    this.displayNewTaskComponent = false;
     this.selectedUserId = id;
   }
 
