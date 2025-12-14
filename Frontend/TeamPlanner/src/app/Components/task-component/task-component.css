@@ -1,0 +1,33 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgb(244 244 244);
+    width: 80rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.task_text {
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+
+.task_description {
+    font-size: 2rem;
+}
+
+.done_btn {
+    width: 3rem;
+    background-color: rgb(143 238 143);
+    font-size: 2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.task_dropdown {
+    background-color: transparent;
+    width: 10%;
+    border: none;
+}

@@ -1,1 +1,4 @@
-<p>task-component works!</p>
+<div class="task">
+    <span class="task_description task_text">{{task().description}}</span>
+    <button class="done_btn" (click)="taskIsDone()">✓</button>
+</div>

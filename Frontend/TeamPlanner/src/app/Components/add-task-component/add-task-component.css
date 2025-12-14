@@ -1,0 +1,24 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgb(244 244 244);
+    width: 80rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.input_task {
+    background-color: white;
+    border: none;
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+.task_btn {
+    background-color: green;
+    border: none;
+    width: 10%;
+    padding: 1rem;
+    border-radius: 2rem;
+}

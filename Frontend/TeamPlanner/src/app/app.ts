@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './Components/header-component/header-component';
 import { UserComponent } from './Components/user-component/user-component';
+import { TaskComponent } from './Components/task-component/task-component';
 import { AddUserComponent } from './Components/add-user-component/add-user-component';
 import { UserServices } from './Services/ UserServices';
+import { TaskServices } from './Services/TaskService';
+import { AddTaskComponent } from './Components/add-task-component/add-task-component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, UserComponent, AddUserComponent],
+  imports: [HeaderComponent, UserComponent, AddUserComponent, TaskComponent, AddTaskComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  constructor(private userServie: UserServices){}
+  constructor(private userServie: UserServices, private taskServices: TaskServices){}
+
 
   displayNewUserField: boolean = false;
+  displayNewTaskComponent: boolean = false;
 
   get Users(){
     return this.userServie.getAllUser();
@@ -27,4 +32,23 @@ export class App {
     this.userServie.addNewUser(name);
     this.displayNewUserField = false;
   }
+
+  selectedUserId: number = 0;
+  loadUserTasks(id : number){
+    this.selectedUserId = id;
+  }
+
+  get loadTasksfromUser(){
+    return this.taskServices.getTaskByUserId(this.selectedUserId)
+  }
+
+  getTaskId(taskId: number){
+    console.log('deleted')
+    let tasks = this.taskServices.deleteTask(taskId);
+  }
+
+  showNewTaskComponent(){
+    this.displayNewTaskComponent = true;
+  }
+
 }

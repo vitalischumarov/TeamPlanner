@@ -1,5 +1,6 @@
 .content-area {
     display: flex;
+    margin-top: 1.5rem;
 }
 
 .user_area {
@@ -8,6 +9,14 @@
     gap: 1rem;
     align-items: center;
     width: 40%;
+}
+
+.task_area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
 }
 
 .addUserBtn {

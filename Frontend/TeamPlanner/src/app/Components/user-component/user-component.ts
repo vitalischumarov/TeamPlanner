@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { UserModel } from '../../Model/UserModel';
 
 @Component({
   selector: 'app-user-component',
@@ -7,5 +8,11 @@ import { Component, input } from '@angular/core';
   styleUrl: './user-component.css',
 })
 export class UserComponent {
-  userName = input.required<string>();
+  user = input.required<UserModel>();
+
+  selectedUser = output<number>();
+
+  sendId(){
+    return this.selectedUser.emit(this.user().id);
+  }
 }

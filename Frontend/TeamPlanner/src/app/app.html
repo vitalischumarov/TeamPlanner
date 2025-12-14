@@ -1,14 +1,21 @@
 <app-header-component></app-header-component>
 <div class="content-area">
     <div class="user_area">
-    @for (user of Users; track user.id) {
-        <app-user-component userName="{{user.name}}"></app-user-component>
-    }
-    @if (displayNewUserField) {
-        <app-add-user-component (newUser)="addUserToList($event)"></app-add-user-component>
-    }
-    <span class="addUserBtn" (click)="addNewUser()">+</span>
+        @for (user of Users; track user.id) {
+            <app-user-component [user]="user" (selectedUser)="loadUserTasks($event)"></app-user-component>
+        }
+        @if (displayNewUserField) {
+            <app-add-user-component (newUser)="addUserToList($event)"></app-add-user-component>
+        }
+        <span class="addUserBtn" (click)="addNewUser()">+</span>
     </div>
     <div class="task_area">
+        @for (task of loadTasksfromUser; track task.id){
+            <app-task-component [task]="task" (taskToDelete)="getTaskId($event)"></app-task-component>
+        }
+        @if (displayNewTaskComponent){
+            <app-add-task-component></app-add-task-component>
+        }
+        <span class="addUserBtn" (click)="showNewTaskComponent()">+</span>
     </div>
 </div>
