@@ -3,12 +3,10 @@ builder.Services.AddScoped<IUser, UserService>();
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("LocalDevPolicy", policy =>
+    options.AddPolicy("AllowAngularDev", policy =>
     {
         policy
-            .WithOrigins(
-                "http://localhost:4200"
-            )
+            .WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -16,5 +14,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 app.MapControllers();
+app.UseHttpsRedirection();
+app.UseCors("AllowAngularDev");
+app.UseAuthorization();
 
 app.Run();

@@ -6,6 +6,7 @@ import { AddUserComponent } from './Components/add-user-component/add-user-compo
 import { UserServices } from './Services/ UserServices';
 import { TaskServices } from './Services/TaskService';
 import { AddTaskComponent } from './Components/add-task-component/add-task-component';
+import { UserModel } from './Model/UserModel';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,13 @@ import { AddTaskComponent } from './Components/add-task-component/add-task-compo
 export class App {
   constructor(private userServie: UserServices, private taskServices: TaskServices){}
 
-
   displayNewUserField: boolean = false;
   displayNewTaskComponent: boolean = false;
+  Users: UserModel[] = [];
 
-  get Users(){
-    return this.userServie.getAllUser();
+  async ngOnInit(){
+    console.log('I am the init function')
+    this.Users = await this.userServie.getAllUser();
   }
 
   addNewUser(){
