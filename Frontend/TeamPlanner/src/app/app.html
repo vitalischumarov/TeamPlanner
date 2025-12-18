@@ -2,7 +2,7 @@
 <div class="content-area">
   <div class="user_area">
     @for (user of Users; track user.Id) {
-    <app-user-component [user]="user" (selectedUser)="loadUserTasks($event)"></app-user-component>
+    <app-user-component [user]="user" (selectedUser)="loadUserTasks($event)" (userToDelete)="deleteUser($event)"></app-user-component>
     } @if (displayNewUserField) {
     <app-add-user-component (newUser)="addUserToList($event)"></app-add-user-component>
     }

@@ -3,8 +3,9 @@
     display: flex;
     padding: 3rem;
     width: 30rem;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 2rem;
+
 }
 
 .user_name {
@@ -18,4 +19,12 @@
     .user_name {
         color: darkgray;
     }
+}
+
+.delete_btn {
+    border: none;
+    background-color: red;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
 }

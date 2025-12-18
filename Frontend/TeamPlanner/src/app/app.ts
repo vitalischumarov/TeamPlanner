@@ -59,4 +59,9 @@ export class App {
   showNewTaskComponent() {
     this.displayNewTaskComponent = true;
   }
+
+  deleteUser(userId: number){
+    console.log("diese user muss geloescht werden: "+userId);
+    this.userServie.deleteUser(userId);
+  }
 }

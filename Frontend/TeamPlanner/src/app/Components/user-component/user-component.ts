@@ -11,8 +11,14 @@ export class UserComponent {
   user = input.required<UserModel>();
 
   selectedUser = output<number>();
+  userToDelete = output<number>();
 
   sendId(){
     return this.selectedUser.emit(this.user().Id);
+  }
+
+  sentIdToDelete() {
+    console.log('delete '+ this.user().Id)
+    return this.userToDelete.emit(this.user().Id);
   }
 }

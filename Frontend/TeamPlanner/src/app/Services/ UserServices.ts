@@ -4,6 +4,7 @@ import { UserModel } from '../Model/UserModel';
 
 @Injectable({ providedIn: 'root' })
 export class UserServices {
+
   async getAllUser(): Promise<UserModel[]> {
     const respond = await fetch('http://localhost:5053/getAllUser');
     if (!respond.ok) {
@@ -30,5 +31,9 @@ export class UserServices {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  deleteUser(id: number){
+    console.log('delete following user '+ id);
   }
 }
