@@ -60,8 +60,9 @@ export class App {
     this.displayNewTaskComponent = true;
   }
 
-  deleteUser(userId: number){
+  async deleteUser(userId: number){
     console.log("diese user muss geloescht werden: "+userId);
-    this.userServie.deleteUser(userId);
+    await this.userServie.deleteUser(userId);
+    this.Users = await this.userServie.getAllUser();
   }
 }

@@ -17,4 +17,13 @@ public class UserService : IUser
         userString = JsonSerializer.Serialize(allUsers);
         File.WriteAllText("Database/userDatabase.json", userString);
     }
+
+    public void DeleteUser(int id)
+    {
+        string userString = loadAllUser();
+        List<User> allUsers = JsonSerializer.Deserialize<List<User>>( userString);
+        allUsers.RemoveAll((user) => user.Id == id);
+        userString = JsonSerializer.Serialize(allUsers);
+        File.WriteAllText("Database/userDatabase.json", userString);
+    }
 }

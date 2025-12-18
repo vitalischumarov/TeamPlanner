@@ -33,7 +33,16 @@ export class UserServices {
     }
   }
 
-  deleteUser(id: number){
-    console.log('delete following user '+ id);
+  async deleteUser(id: number){
+    const url = 'http://localhost:5053/deleteUser/'+id;
+    try {
+      console.log(url)
+      const response = await fetch(url, {
+        method: 'DELETE'
+      })
+    }
+    catch {
+      console.log('error with deleting')
+    }
   }
 }
