@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Models.User;
 
 [ApiController]
 public class UserController: ControllerBase
@@ -11,9 +12,23 @@ public class UserController: ControllerBase
     }
 
     [HttpGet("getAllUser")]
-    public IActionResult getAllUser()
+    public IActionResult GetAllUser()
     {
         string users = _iUser.loadAllUser();
         return Ok(users);
+    }
+
+    [HttpPost( "addUser")]
+    public IActionResult AddNewUser([FromBody] string username)
+    {
+        Random random = new Random();
+        int userId = random.Next();
+        User user = new User()
+        {
+            Id = userId,
+            Name = username
+        };
+        _iUser.saveUser(user);
+        return Ok( "saved");
     }
 }

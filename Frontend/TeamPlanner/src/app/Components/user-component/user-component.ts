@@ -13,6 +13,6 @@ export class UserComponent {
   selectedUser = output<number>();
 
   sendId(){
-    return this.selectedUser.emit(this.user().id);
+    return this.selectedUser.emit(this.user().Id);
   }
 }

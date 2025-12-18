@@ -11,6 +11,7 @@ export class AddUserComponent {
   newUser = output<string>();
 
   addUser(input: string){
+    console.log('addUser Button pressed')
     this.newUser.emit(input);
   }
 }

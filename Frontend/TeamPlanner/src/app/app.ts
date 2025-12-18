@@ -12,46 +12,51 @@ import { UserModel } from './Model/UserModel';
   selector: 'app-root',
   imports: [HeaderComponent, UserComponent, AddUserComponent, TaskComponent, AddTaskComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  constructor(private userServie: UserServices, private taskServices: TaskServices){}
+  constructor(
+    private userServie: UserServices,
+    private taskServices: TaskServices,
+  ) {}
 
   displayNewUserField: boolean = false;
   displayNewTaskComponent: boolean = false;
   Users: UserModel[] = [];
 
-  async ngOnInit(){
-    console.log('I am the init function')
+  async ngOnInit() {
+    console.log('I am the init function');
     this.Users = await this.userServie.getAllUser();
+    console.log(this.Users);
   }
 
-  addNewUser(){
+  addNewUser() {
     this.displayNewUserField = true;
   }
 
-  addUserToList(name: string){
-    this.userServie.addNewUser(name);
-    this.displayNewUserField = false;
+    async addUserToList(name: string) {
+      await this.userServie.addNewUser(name);
+      this.displayNewUserField = false;
+      this.Users = await this.userServie.getAllUser();
+      console.log(this.Users);
   }
 
   selectedUserId: number = 0;
-  loadUserTasks(id : number){
+  loadUserTasks(id: number) {
     this.displayNewTaskComponent = false;
     this.selectedUserId = id;
   }
 
-  get loadTasksfromUser(){
-    return this.taskServices.getTaskByUserId(this.selectedUserId)
+  get loadTasksfromUser() {
+    return this.taskServices.getTaskByUserId(this.selectedUserId);
   }
 
-  getTaskId(taskId: number){
-    console.log('deleted')
+  getTaskId(taskId: number) {
+    console.log('deleted');
     let tasks = this.taskServices.deleteTask(taskId);
   }
 
-  showNewTaskComponent(){
+  showNewTaskComponent() {
     this.displayNewTaskComponent = true;
   }
-
 }
