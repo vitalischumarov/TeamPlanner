@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUser, UserService>();
+builder.Services.AddScoped<ITask, TaskService>();
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
