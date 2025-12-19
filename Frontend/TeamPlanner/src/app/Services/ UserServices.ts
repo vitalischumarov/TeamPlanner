@@ -40,6 +40,7 @@ export class UserServices {
       const response = await fetch(url, {
         method: 'DELETE'
       })
+      console.log('user sollte weg sein')
     }
     catch {
       console.log('error with deleting')

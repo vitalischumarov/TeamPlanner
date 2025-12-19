@@ -21,6 +21,7 @@ public class UserService : IUser
     public void DeleteUser(int id)
     {
         string userString = loadAllUser();
+        Console.WriteLine(userString);
         List<User> allUsers = JsonSerializer.Deserialize<List<User>>( userString);
         allUsers.RemoveAll((user) => user.Id == id);
         userString = JsonSerializer.Serialize(allUsers);

@@ -35,7 +35,7 @@ public class UserController: ControllerBase
     [HttpDelete("deleteUser/{id}")]
     public IActionResult DeleteUser(int id)
     {
-        // _iUser.DeleteUser(id);
+        _iUser.DeleteUser(id);
         return Ok("User was deleted");
     }
 }
